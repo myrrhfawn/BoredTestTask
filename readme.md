@@ -1,3 +1,37 @@
+# User manual for launching the program
+
+To use BoredTestTask you need to clone the repository using:
+
+$ git clone "https://github.com/myrrhfawn/BoredTestTask"
+
+then install all dependencies from the .txt file:
+
+$ pip install -r requirements.txt
+
+now the program is ready to work and you can use the set of commands:
+
+A command to get the random activity and save it to the database:
+
+$ python boredApp.py new 
+
+Available optional options:
+--type string (Type of the activity ["education", "recreational", "social", "diy", "charity", "cooking", "relaxation", "music", "busywork"])  
+--participants integer (The number of people that this activity could involve [0, n])
+--price float (A factor describing the cost of the event with zero being free [0, 1])
+--price_min float (Is used only separately from the --price)
+--price_max float (Is used only separately from the --price)
+--accessibility float (A factor describing how possible an event is to do with zero being the most accessible [0.0, 1.0])
+--accessibility_min float (Is used only separately from the --accessibility)
+--accessibility_min float (Is used only separately from the --accessibility)
+
+Command to get a list of the last 5 saved activities:
+
+$ python boredApp.py list
+
+
+
+
+
 # Technical Challenge for Juniors
 
 For this challenge, you are going to use the API of [bored API](https://www.boredapi.com/). This API gives us a random activity to do every time you call it, for example, if you make the following call:
