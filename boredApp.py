@@ -177,7 +177,6 @@ class CommandLineProgram:
 
 
 
-# Виводимо значення аргументів
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="My Program")  # We create an argument parser
     api = API.BoredAPIWrapper(BASE_URL)                         # We create a API for program
