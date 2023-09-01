@@ -1,14 +1,14 @@
 # User manual for launching the program
 
-1. To use BoredTestTask you need to clone the repository using:
+To use BoredTestTask you need to clone the repository using:
 
     $ git clone "https://github.com/myrrhfawn/BoredTestTask.git"
-
-2. Then install all dependencies from the .txt file:
+   
+Then install all dependencies from the requirements.txt file:
 
     $ pip install -r requirements.txt
 
-4. Now the program is ready to work and you can use the set of commands.
+Now the program is ready to work and you can use the set of commands.
 
 A command to get the random activity and save it to the database:
 
@@ -16,6 +16,7 @@ A command to get the random activity and save it to the database:
 
 Available optional options:
     --type string (Type of the activity ["education", "recreational", "social", "diy", "charity", "cooking", "relaxation", "music", "busywork"])  
+    
     --participants integer (The number of people that this activity could involve [0, n])
     --price float (A factor describing the cost of the event with zero being free [0, 1])
     --price_min float (Is used only separately from the --price)
