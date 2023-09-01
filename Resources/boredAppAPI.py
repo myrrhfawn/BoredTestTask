@@ -144,14 +144,3 @@ class ActivityDataBase:
             dict[col[0]] = row[idx]
         return dict
 
-
-
-
-
-if __name__ == "__main__":
-    API = BoredAPIWrapper(BASE_URL)
-    BASE = ActivityDataBase("ActivitiesDB.db")
-    activity = API.get_activity()
-    BASE.save_activity(activity)
-    last = BASE.get_last_saved_activity()
-    print(last)
