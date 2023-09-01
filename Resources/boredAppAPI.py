@@ -2,9 +2,6 @@ import requests
 import sqlite3 as sq
 import json
 
-#CONSTANTS
-BASE_URL = "https://www.boredapi.com/api/activity"
-
 
 """
 Activity type = {
@@ -53,8 +50,7 @@ class BoredAPIWrapper:
 
         request_url = self.create_url_with_params(params)
         request = requests.get(request_url)
-        print(request_url)
-        print(request.text)
+        print(request_url) #################################
         return json.loads(request.text)
 
     def create_url_with_params(self, params):
@@ -68,7 +64,7 @@ class BoredAPIWrapper:
         if not params:
             return self.url
 
-        param_string = '&'.join([f'{key}={value}' for key, value in params.items()])
+        param_string = '&'.join([f'{key}={value}' for key, value in params.items() if value is not None])
         full_url = f'{self.url}?{param_string}'
         return full_url
 
