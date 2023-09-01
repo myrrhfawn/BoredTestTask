@@ -1,32 +1,36 @@
 # User manual for launching the program
 
-To use BoredTestTask you need to clone the repository using:
+1. To use BoredTestTask you need to clone the repository using:
 
-$ git clone "https://github.com/myrrhfawn/BoredTestTask"
+    $ git clone "https://github.com/myrrhfawn/BoredTestTask.git"
 
-then install all dependencies from the .txt file:
+2. Then install all dependencies from the .txt file:
 
-$ pip install -r requirements.txt
+    $ pip install -r requirements.txt
 
-now the program is ready to work and you can use the set of commands:
+4. Now the program is ready to work and you can use the set of commands.
 
 A command to get the random activity and save it to the database:
 
-$ python boredApp.py new 
+    $ python boredApp.py new 
 
 Available optional options:
---type string (Type of the activity ["education", "recreational", "social", "diy", "charity", "cooking", "relaxation", "music", "busywork"])  
---participants integer (The number of people that this activity could involve [0, n])
---price float (A factor describing the cost of the event with zero being free [0, 1])
---price_min float (Is used only separately from the --price)
---price_max float (Is used only separately from the --price)
---accessibility float (A factor describing how possible an event is to do with zero being the most accessible [0.0, 1.0])
---accessibility_min float (Is used only separately from the --accessibility)
---accessibility_min float (Is used only separately from the --accessibility)
+    --type string (Type of the activity ["education", "recreational", "social", "diy", "charity", "cooking", "relaxation", "music", "busywork"])  
+    --participants integer (The number of people that this activity could involve [0, n])
+    --price float (A factor describing the cost of the event with zero being free [0, 1])
+    --price_min float (Is used only separately from the --price)
+    --price_max float (Is used only separately from the --price)
+    --accessibility float (A factor describing how possible an event is to do with zero being the most accessible [0.0, 1.0])
+    --accessibility_min float (Is used only separately from the --accessibility)
+    --accessibility_min float (Is used only separately from the --accessibility)
+
+Example:
+    $ python boredApp.py new --type education --participants 1 --price_min 0.1 --price_max 30 --accessibility_min 0.1 --accessibility_max 0.5
+
 
 Command to get a list of the last 5 saved activities:
 
-$ python boredApp.py list
+    $ python boredApp.py list
 
 
 
