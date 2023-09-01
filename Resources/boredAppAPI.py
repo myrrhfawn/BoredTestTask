@@ -18,10 +18,10 @@ Params type = {
                     "participants": Integer,    -optional
                     "minprice": Float,          -optional
                     "maxprice": Float,          -optional
-                    "price": Float,             -optional, used without minprice and maxprice
+                    "price": Float,             -optional, used only without minprice and maxprice
                     "minaccessibility": Float,  -optional
                     "maxaccessibility":Float,   -optional
-                    "accessibility": Float      -optional, used without minaccessibility and maxaccessibility
+                    "accessibility": Float      -optional, used only without minaccessibility and maxaccessibility
                 }               
                 
 
@@ -50,7 +50,6 @@ class BoredAPIWrapper:
 
         request_url = self.create_url_with_params(params)
         request = requests.get(request_url)
-        print(request_url) #################################
         return json.loads(request.text)
 
     def create_url_with_params(self, params):
@@ -102,8 +101,9 @@ class ActivityDataBase:
 
         except sq.Error as e:
             if db: db.rollback()
-            print("Error saving activity to the database")
-            print(e)
+            if not activity["error"]:
+                print("Error saving activity to the database")
+                print(e)
         finally:
             if db: db.close()
 
@@ -112,7 +112,7 @@ class ActivityDataBase:
         A function that returns the last 5 records from the database.
 
         :param: Void.
-        :return: Array -  an array of 5 values of type <class 'dict'>
+        :return: Array -  an array of 5 values of Activity type.
         """
         try:
             db = sq.connect(self.db_file)
